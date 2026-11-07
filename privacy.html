@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>/* The app passes its own theme (?theme=dark|light); otherwise the system setting decides */
+try{var t=new URLSearchParams(location.search).get("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
 <div class="sky" aria-hidden="true"></div>
@@ -24,75 +26,88 @@
 <div class="tabs" role="tablist" aria-label="Language"><button type="button" role="tab" data-lang="en" aria-selected="false">EN</button><button type="button" role="tab" data-lang="tr" aria-selected="false">TR</button><button type="button" role="tab" data-lang="de" aria-selected="false">DE</button><button type="button" role="tab" data-lang="fr" aria-selected="false">FR</button><button type="button" role="tab" data-lang="it" aria-selected="false">IT</button><button type="button" role="tab" data-lang="es" aria-selected="false">ES</button></div>
 <section class="card policy" data-lang="en" lang="en" hidden>
 <h2>English</h2>
-<p class="updated">Last Updated: October 17, 2026</p>
+<p class="updated">Last Updated: November 7, 2026</p>
 <h3>Introduction</h3>
-<p>Pixel Weather ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+<p>Pixel Weather ("we," "our," or "us") respects your privacy. This policy explains what data the Pixel Weather app for Android and iOS (including its widgets and watch apps) collects, why, who processes it, and how you can control it. We do not ask for your name, email address or phone number, and we do not sell your data.</p>
 <h3>Information We Collect</h3>
 <h4>1. Location Data</h4>
 <ul>
-<li>We collect your device's location to provide accurate weather information</li>
-<li>Location data is used only to fetch weather forecasts and is not stored permanently</li>
-<li>You can grant or revoke location permissions at any time through your device settings</li>
+<li>When you allow it, the app reads your device's location (precise or approximate, as you choose) and sends the coordinates to our weather APIs to get the forecast for where you are. City names you search for are sent the same way.</li>
+<li><strong>Background location (widgets):</strong> if you place a widget set to your current location and choose "Allow all the time" (Android) or allow location for widgets (iOS), the app checks your location in the background about every 15 minutes so the widget follows you. This is used only to fetch the weather. It is never used for ads or analytics.</li>
+<li>We do not store your location history. You can change or revoke location access at any time in your device settings; you can then pick cities by hand.</li>
 </ul>
-<h4>2. User Preferences</h4>
+<h4>2. Data Stored on Your Device</h4>
 <ul>
-<li>Temperature unit preference (Celsius/Fahrenheit)</li>
-<li>App theme preference (Dark/Light/System)</li>
-<li>Language preference</li>
-<li>Favorite locations (stored locally and encrypted)</li>
+<li>Temperature unit, theme, language, notification and widget settings</li>
+<li>Favorite locations (on Android in encrypted storage)</li>
+<li>This data stays on your device and is not sent to us, except as described under Feedback below.</li>
 </ul>
-<h4>3. Device Information</h4>
+<h4>3. Usage and Diagnostics</h4>
 <ul>
-<li>Device model and operating system version (for app compatibility)</li>
-<li>App version and crash reports (to improve stability)</li>
+<li><strong>Analytics (Firebase Analytics):</strong> app events such as app opens, screens and features used, paywall views, ad results, permission choices, plus language, platform and device type. These are linked to a random app-instance ID, not to your name.</li>
+<li><strong>Crash reports (Firebase Crashlytics):</strong> crash logs and technical details (device model, OS and app version) to fix bugs.</li>
+<li><strong>Remote configuration (Firebase Remote Config):</strong> the app downloads settings (for example which features or announcements to show), using a Firebase installation ID.</li>
+</ul>
+<h4>4. Advertising</h4>
+<ul>
+<li>Free users see ads from Google AdMob. AdMob may collect your device's advertising ID, IP address and ad interactions to show and measure ads.</li>
+<li>On iPhone and iPad we ask for tracking permission first; if you decline, ads are not personalized based on tracking. On Android you can reset or delete your advertising ID in the device settings.</li>
+<li>Premium removes ads.</li>
+</ul>
+<h4>5. Purchases</h4>
+<ul>
+<li>Subscriptions are handled by RevenueCat, using a random app user ID and your purchase history. Payments are processed by Apple or Google; we never see your card details.</li>
+</ul>
+<h4>6. Feedback and Bug Reports</h4>
+<ul>
+<li>If you send feedback from the app, we receive your message and, so we can help you: the app version, platform, device model, a device identifier (Android ID or iOS identifier for vendor), language, time zone, your app settings, your RevenueCat user ID and premium status, and for bug reports the location shown in the app.</li>
+<li>It is sent over an encrypted connection to our feedback server (feedback.aralbenli.com) and delivered to our support inbox. We use it only to answer you and fix problems.</li>
 </ul>
 <h3>How We Use Your Information</h3>
 <ul>
-<li><strong>Weather Services</strong>: Your location is used solely to provide weather forecasts</li>
-<li><strong>App Functionality</strong>: Preferences are stored to personalize your experience</li>
-<li><strong>Analytics</strong>: Anonymous usage data helps us improve the app</li>
-<li><strong>Security</strong>: We perform security checks to protect against tampering and ensure app integrity</li>
+<li><strong>Weather:</strong> location and searched cities, to show forecasts and refresh widgets</li>
+<li><strong>App functionality:</strong> settings, remote configuration and purchases</li>
+<li><strong>Analytics and stability:</strong> usage events and crash reports, to improve the app</li>
+<li><strong>Advertising:</strong> ads for free users</li>
+<li><strong>Support:</strong> feedback messages, to answer you</li>
+<li><strong>Security:</strong> integrity checks to protect against tampering</li>
 </ul>
 <h3>Third-Party Services</h3>
-<p>We use the following third-party services:</p>
-<h4>1. Weather Data Provider</h4>
+<p>These providers process data on our behalf, under their own privacy policies:</p>
+<h4>1. Weather Data Providers</h4>
 <ul>
-<li>We use weather APIs to fetch forecast data</li>
-<li>Weather provider may collect location data according to their privacy policy</li>
+<li>We use weather APIs to fetch forecast data. They receive your coordinates or searched city and your IP address.</li>
 </ul>
 <h4>2. RevenueCat (Subscription Management)</h4>
 <ul>
-<li>Used for premium subscription features</li>
-<li>Processes payment information (we do not store payment details)</li>
 <li>Privacy Policy: <a href="https://www.revenuecat.com/privacy" rel="noopener">https://www.revenuecat.com/privacy</a></li>
 </ul>
 <h4>3. Google AdMob (Advertisements)</h4>
 <ul>
-<li>Shows ads to non-premium users</li>
-<li>May collect device identifiers and usage data</li>
 <li>Privacy Policy: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li>
+<li>How Google uses data: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
 </ul>
-<h4>4. Google Firebase</h4>
+<h4>4. Google Firebase (Analytics, Crashlytics, Remote Config)</h4>
 <ul>
-<li>Used for crash analytics and app performance monitoring</li>
 <li>Privacy Policy: <a href="https://firebase.google.com/support/privacy" rel="noopener">https://firebase.google.com/support/privacy</a></li>
 </ul>
-<h3>Data Storage and Security</h3>
+<h3>Data Storage, Retention and Security</h3>
 <ul>
-<li><strong>Local Storage</strong>: Preferences and favorite locations are stored locally on your device using encrypted storage</li>
-<li><strong>No Personal Data Collection</strong>: We do not collect personally identifiable information (PII)</li>
-<li><strong>Security Measures</strong>: We implement security checks to prevent unauthorized access and tampering</li>
+<li>All data is sent over encrypted connections (HTTPS).</li>
+<li>We do not keep your location. Analytics and crash data are kept by Firebase for a limited time under its retention settings. Feedback emails are kept only as long as needed to handle your request.</li>
+<li>Settings and favorites stay on your device and are deleted when you uninstall the app.</li>
 </ul>
 <h3>Your Rights</h3>
 <ul>
-<li><strong>Access</strong>: You can view all data stored in the app through Settings</li>
-<li><strong>Deletion</strong>: You can clear all app data through device settings or by uninstalling the app</li>
-<li><strong>Opt-Out</strong>: You can disable location services or upgrade to Premium to remove ads</li>
+<li><strong>Deletion:</strong> email <a href="mailto:support@aralbenli.com">support@aralbenli.com</a> to ask us to delete your feedback messages and the data linked to your identifiers at our providers. If you can, include your RevenueCat or device ID from a feedback report.</li>
+<li><strong>Access and correction:</strong> you can ask what data we hold about you.</li>
+<li><strong>Opt-out:</strong> turn off location access, reset your advertising ID, decline tracking on iOS, or upgrade to Premium to remove ads.</li>
+<li>If you live in the EEA, the UK or another region with data protection laws, you also have the rights those laws give you, including the right to complain to your data protection authority.</li>
 </ul>
 <h3>Children's Privacy</h3>
-<p>Pixel Weather does not knowingly collect data from children under 13. If you are a parent and believe your child has provided us with personal information, please contact us.</p>
+<p>Pixel Weather is not directed to children under 13 and does not knowingly collect data from them. If you are a parent and believe your child has provided us with personal information, please contact us and we will delete it.</p>
 <h3>Changes to This Policy</h3>
-<p>We may update this privacy policy from time to time. Changes will be posted in the app and on this page.</p>
+<p>We may update this privacy policy from time to time. Changes will be posted on this page with a new date.</p>
 <h3>Contact Us</h3>
 <p>If you have questions about this privacy policy, please contact us:</p>
 <ul>
@@ -102,77 +117,90 @@
 </section>
 <section class="card policy" data-lang="tr" lang="tr" hidden>
 <h2>Türkçe</h2>
-<p class="updated">Son Güncelleme: 17 Ekim 2026</p>
+<p class="updated">Son Güncelleme: 7 Kasım 2026</p>
 <h3>Giriş</h3>
-<p>Pixel Weather ("biz" veya "uygulamamız") gizliliğinize saygı duyar ve kişisel verilerinizi korumayı taahhüt eder. Bu gizlilik politikası, mobil uygulamamızı kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.</p>
+<p>Pixel Weather ("biz") gizliliğinize saygı duyar. Bu politika, Android ve iOS için Pixel Weather uygulamasının (widget'ları ve saat uygulamaları dahil) hangi verileri topladığını, neden topladığını, verileri kimin işlediğini ve bunları nasıl kontrol edebileceğinizi açıklar. Adınızı, e-posta adresinizi veya telefon numaranızı istemeyiz ve verilerinizi satmayız.</p>
 <h3>Topladığımız Bilgiler</h3>
 <h4>1. Konum Verileri</h4>
 <ul>
-<li>Doğru hava durumu bilgisi sağlamak için cihazınızın konumunu topluyoruz</li>
-<li>Konum verileri yalnızca hava tahminlerini almak için kullanılır ve kalıcı olarak saklanmaz</li>
-<li>Cihaz ayarlarınızdan istediğiniz zaman konum izinlerini verebilir veya iptal edebilirsiniz</li>
+<li>İzin verdiğinizde uygulama cihazınızın konumunu (seçiminize göre tam veya yaklaşık) okur ve bulunduğunuz yerin tahminini almak için koordinatları hava durumu API'lerimize gönderir. Aradığınız şehir adları da aynı şekilde gönderilir.</li>
+<li><strong>Arka planda konum (widget'lar):</strong> mevcut konuma ayarlı bir widget eklerseniz ve "Her zaman izin ver" (Android) seçeneğini seçerseniz ya da widget'lar için konuma izin verirseniz (iOS), widget sizi takip edebilsin diye uygulama yaklaşık 15 dakikada bir arka planda konumunuzu kontrol eder. Bu yalnızca hava durumunu almak için kullanılır; reklam veya analitik için asla kullanılmaz.</li>
+<li>Konum geçmişinizi saklamayız. Konum erişimini cihaz ayarlarınızdan istediğiniz zaman değiştirebilir veya kapatabilirsiniz; bu durumda şehirleri elle seçebilirsiniz.</li>
 </ul>
-<h4>2. Kullanıcı Tercihleri</h4>
+<h4>2. Cihazınızda Saklanan Veriler</h4>
 <ul>
-<li>Sıcaklık birimi tercihi (Celsius/Fahrenheit)</li>
-<li>Uygulama tema tercihi (Karanlık/Aydınlık/Sistem)</li>
-<li>Dil tercihi</li>
-<li>Favori konumlar (yerel olarak ve şifreli şekilde saklanır)</li>
+<li>Sıcaklık birimi, tema, dil, bildirim ve widget ayarları</li>
+<li>Favori konumlar (Android'de şifreli depolamada)</li>
+<li>Bu veriler cihazınızda kalır ve aşağıdaki Geri Bildirim bölümünde anlatılan durum dışında bize gönderilmez.</li>
 </ul>
-<h4>3. Cihaz Bilgileri</h4>
+<h4>3. Kullanım ve Tanılama</h4>
 <ul>
-<li>Cihaz modeli ve işletim sistemi sürümü (uygulama uyumluluğu için)</li>
-<li>Uygulama sürümü ve çökme raporları (kararlılığı artırmak için)</li>
+<li><strong>Analitik (Firebase Analytics):</strong> uygulamanın açılması, kullanılan ekranlar ve özellikler, abonelik ekranının görüntülenmesi, reklam sonuçları, izin seçimleri gibi olaylar ile dil, platform ve cihaz türü. Bunlar adınıza değil, rastgele bir uygulama örneği kimliğine bağlıdır.</li>
+<li><strong>Çökme raporları (Firebase Crashlytics):</strong> hataları düzeltmek için çökme kayıtları ve teknik ayrıntılar (cihaz modeli, işletim sistemi ve uygulama sürümü).</li>
+<li><strong>Uzaktan yapılandırma (Firebase Remote Config):</strong> uygulama, bir Firebase kurulum kimliği kullanarak ayarları indirir (örneğin hangi özelliklerin veya duyuruların gösterileceği).</li>
+</ul>
+<h4>4. Reklamlar</h4>
+<ul>
+<li>Ücretsiz kullanıcılar Google AdMob reklamları görür. AdMob, reklamları göstermek ve ölçmek için cihazınızın reklam kimliğini, IP adresinizi ve reklam etkileşimlerinizi toplayabilir.</li>
+<li>iPhone ve iPad'de önce izleme izni isteriz; reddederseniz reklamlar izlemeye göre kişiselleştirilmez. Android'de reklam kimliğinizi cihaz ayarlarından sıfırlayabilir veya silebilirsiniz.</li>
+<li>Premium reklamları kaldırır.</li>
+</ul>
+<h4>5. Satın Almalar</h4>
+<ul>
+<li>Abonelikler, rastgele bir uygulama kullanıcı kimliği ve satın alma geçmişiniz kullanılarak RevenueCat tarafından yönetilir. Ödemeleri Apple veya Google işler; kart bilgilerinizi asla görmeyiz.</li>
+</ul>
+<h4>6. Geri Bildirim ve Hata Bildirimleri</h4>
+<ul>
+<li>Uygulamadan geri bildirim gönderirseniz mesajınızı ve size yardımcı olabilmemiz için şunları alırız: uygulama sürümü, platform, cihaz modeli, bir cihaz kimliği (Android ID veya iOS satıcı kimliği), dil, saat dilimi, uygulama ayarlarınız, RevenueCat kullanıcı kimliğiniz ve premium durumunuz, hata bildirimlerinde ise uygulamada gösterilen konum.</li>
+<li>Bunlar şifreli bir bağlantıyla geri bildirim sunucumuza (feedback.aralbenli.com) gönderilir ve destek e-posta kutumuza iletilir. Yalnızca size yanıt vermek ve sorunları düzeltmek için kullanılır.</li>
 </ul>
 <h3>Bilgilerinizi Nasıl Kullanıyoruz</h3>
 <ul>
-<li><strong>Hava Durumu Hizmetleri</strong>: Konumunuz yalnızca hava tahminleri sağlamak için kullanılır</li>
-<li><strong>Uygulama İşlevselliği</strong>: Tercihler deneyiminizi kişiselleştirmek için saklanır</li>
-<li><strong>Analitik</strong>: Anonim kullanım verileri uygulamayı geliştirmemize yardımcı olur</li>
-<li><strong>Güvenlik</strong>: Müdahaleye karşı koruma ve uygulama bütünlüğünü sağlamak için güvenlik kontrolleri yaparız</li>
+<li><strong>Hava durumu:</strong> tahminleri göstermek ve widget'ları yenilemek için konum ve aranan şehirler</li>
+<li><strong>Uygulama işlevleri:</strong> ayarlar, uzaktan yapılandırma ve satın almalar</li>
+<li><strong>Analitik ve kararlılık:</strong> uygulamayı geliştirmek için kullanım olayları ve çökme raporları</li>
+<li><strong>Reklam:</strong> ücretsiz kullanıcılara reklamlar</li>
+<li><strong>Destek:</strong> size yanıt vermek için geri bildirim mesajları</li>
+<li><strong>Güvenlik:</strong> müdahaleye karşı bütünlük kontrolleri</li>
 </ul>
 <h3>Üçüncü Taraf Hizmetler</h3>
-<p>Aşağıdaki üçüncü taraf hizmetlerini kullanıyoruz:</p>
-<h4>1. Hava Durumu Veri Sağlayıcı</h4>
+<p>Bu sağlayıcılar verileri bizim adımıza, kendi gizlilik politikalarına göre işler:</p>
+<h4>1. Hava Durumu Veri Sağlayıcıları</h4>
 <ul>
-<li>Tahmin verilerini almak için hava durumu API'lerini kullanıyoruz</li>
-<li>Hava durumu sağlayıcı, gizlilik politikasına göre konum verilerini toplayabilir</li>
+<li>Tahmin verilerini almak için hava durumu API'lerini kullanıyoruz. Bu sağlayıcılar koordinatlarınızı veya aradığınız şehri ve IP adresinizi alır.</li>
 </ul>
 <h4>2. RevenueCat (Abonelik Yönetimi)</h4>
 <ul>
-<li>Premium abonelik özellikleri için kullanılır</li>
-<li>Ödeme bilgilerini işler (ödeme detaylarını saklamayız)</li>
 <li>Gizlilik Politikası: <a href="https://www.revenuecat.com/privacy" rel="noopener">https://www.revenuecat.com/privacy</a></li>
 </ul>
 <h4>3. Google AdMob (Reklamlar)</h4>
 <ul>
-<li>Premium olmayan kullanıcılara reklam gösterir</li>
-<li>Cihaz tanımlayıcıları ve kullanım verilerini toplayabilir</li>
 <li>Gizlilik Politikası: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li>
+<li>Google verileri nasıl kullanır: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
 </ul>
-<h4>4. Google Firebase</h4>
+<h4>4. Google Firebase (Analytics, Crashlytics, Remote Config)</h4>
 <ul>
-<li>Çökme analitiği ve uygulama performans izleme için kullanılır</li>
 <li>Gizlilik Politikası: <a href="https://firebase.google.com/support/privacy" rel="noopener">https://firebase.google.com/support/privacy</a></li>
 </ul>
-<h3>Veri Depolama ve Güvenlik</h3>
+<h3>Veri Depolama, Saklama Süresi ve Güvenlik</h3>
 <ul>
-<li><strong>Yerel Depolama</strong>: Tercihler ve favori konumlar, şifreli depolama kullanılarak cihazınızda yerel olarak saklanır</li>
-<li><strong>Kişisel Veri Toplama Yok</strong>: Kişisel olarak tanımlanabilir bilgi (PII) toplamıyoruz</li>
-<li><strong>Güvenlik Önlemleri</strong>: Yetkisiz erişimi ve müdahaleyi önlemek için güvenlik kontrolleri uyguluyoruz</li>
+<li>Tüm veriler şifreli bağlantılarla (HTTPS) gönderilir.</li>
+<li>Konumunuzu saklamayız. Analitik ve çökme verileri, Firebase tarafından saklama ayarlarına göre sınırlı bir süre tutulur. Geri bildirim e-postaları yalnızca talebinizi sonuçlandırmak için gereken süre kadar saklanır.</li>
+<li>Ayarlar ve favoriler cihazınızda kalır ve uygulamayı kaldırdığınızda silinir.</li>
 </ul>
 <h3>Haklarınız</h3>
 <ul>
-<li><strong>Erişim</strong>: Ayarlar üzerinden uygulamada saklanan tüm verileri görüntüleyebilirsiniz</li>
-<li><strong>Silme</strong>: Cihaz ayarları üzerinden veya uygulamayı kaldırarak tüm uygulama verilerini temizleyebilirsiniz</li>
-<li><strong>Vazgeçme</strong>: Konum hizmetlerini devre dışı bırakabilir veya reklamları kaldırmak için Premium'a yükseltebilirsiniz</li>
+<li><strong>Silme:</strong> geri bildirim mesajlarınızın ve sağlayıcılarımızdaki kimliklerinize bağlı verilerin silinmesini istemek için <a href="mailto:support@aralbenli.com">support@aralbenli.com</a> adresine e-posta gönderin. Mümkünse bir geri bildirimdeki RevenueCat veya cihaz kimliğinizi ekleyin.</li>
+<li><strong>Erişim ve düzeltme:</strong> hakkınızda hangi verileri tuttuğumuzu sorabilirsiniz.</li>
+<li><strong>Vazgeçme:</strong> konum erişimini kapatabilir, reklam kimliğinizi sıfırlayabilir, iOS'ta izlemeyi reddedebilir veya reklamları kaldırmak için Premium'a geçebilirsiniz.</li>
+<li>Türkiye'de (KVKK), AEA'da, Birleşik Krallık'ta veya veri koruma yasaları olan başka bir bölgede yaşıyorsanız, bu yasaların verdiği haklara da sahipsiniz; buna veri koruma kurumuna şikâyet hakkı da dahildir.</li>
 </ul>
 <h3>Çocukların Gizliliği</h3>
-<p>Pixel Weather, 13 yaşın altındaki çocuklardan bilerek veri toplamaz. Ebeveynseniz ve çocuğunuzun bize kişisel bilgi verdiğine inanıyorsanız, lütfen bizimle iletişime geçin.</p>
+<p>Pixel Weather 13 yaşın altındaki çocuklara yönelik değildir ve onlardan bilerek veri toplamaz. Ebeveynseniz ve çocuğunuzun bize kişisel bilgi verdiğini düşünüyorsanız lütfen bizimle iletişime geçin; bu bilgileri sileriz.</p>
 <h3>Bu Politikadaki Değişiklikler</h3>
-<p>Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Değişiklikler uygulamada ve bu sayfada yayınlanacaktır.</p>
+<p>Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Değişiklikler yeni bir tarihle bu sayfada yayınlanır.</p>
 <h3>Bize Ulaşın</h3>
-<p>Bu gizlilik politikası hakkında sorularınız varsa, lütfen bizimle iletişime geçin:</p>
+<p>Bu gizlilik politikası hakkında sorularınız varsa lütfen bizimle iletişime geçin:</p>
 <ul>
 <li>E-posta: <a href="mailto:support@aralbenli.com">support@aralbenli.com</a></li>
 <li>GitHub: <a href="https://github.com/AralBenli" rel="noopener">https://github.com/AralBenli</a></li>
@@ -180,76 +208,89 @@
 </section>
 <section class="card policy" data-lang="de" lang="de" hidden>
 <h2>Deutsch</h2>
-<p class="updated">Zuletzt aktualisiert: 7. Dezember 2024</p>
+<p class="updated">Zuletzt aktualisiert: 7. November 2026</p>
 <h3>Einführung</h3>
-<p>Pixel Weather ("wir", "unser" oder "uns") respektiert Ihre Privatsphäre und verpflichtet sich, Ihre persönlichen Daten zu schützen. Diese Datenschutzrichtlinie erläutert, wie wir Ihre Informationen sammeln, verwenden und schützen, wenn Sie unsere mobile Anwendung nutzen.</p>
-<h3>Informationen, die wir sammeln</h3>
+<p>Pixel Weather („wir“) respektiert Ihre Privatsphäre. Diese Richtlinie erklärt, welche Daten die Pixel Weather App für Android und iOS (einschließlich ihrer Widgets und Watch-Apps) erhebt, warum, wer sie verarbeitet und wie Sie sie steuern können. Wir fragen nicht nach Ihrem Namen, Ihrer E-Mail-Adresse oder Telefonnummer und verkaufen Ihre Daten nicht.</p>
+<h3>Informationen, die wir erheben</h3>
 <h4>1. Standortdaten</h4>
 <ul>
-<li>Wir erfassen den Standort Ihres Geräts, um genaue Wetterinformationen bereitzustellen</li>
-<li>Standortdaten werden nur zum Abrufen von Wettervorhersagen verwendet und nicht dauerhaft gespeichert</li>
-<li>Sie können Standortberechtigungen jederzeit über Ihre Geräteinstellungen erteilen oder widerrufen</li>
+<li>Wenn Sie es erlauben, liest die App den Standort Ihres Geräts (genau oder ungefähr, wie Sie wählen) und sendet die Koordinaten an unsere Wetter-APIs, um die Vorhersage für Ihren Ort abzurufen. Gesuchte Städtenamen werden auf dieselbe Weise gesendet.</li>
+<li><strong>Standort im Hintergrund (Widgets):</strong> Wenn Sie ein Widget für den aktuellen Standort platzieren und „Immer zulassen“ (Android) wählen oder den Standort für Widgets erlauben (iOS), prüft die App etwa alle 15 Minuten im Hintergrund Ihren Standort, damit das Widget Ihnen folgt. Dies dient nur zum Abrufen des Wetters und wird nie für Werbung oder Analysen verwendet.</li>
+<li>Wir speichern keinen Standortverlauf. Sie können den Standortzugriff jederzeit in den Geräteeinstellungen ändern oder widerrufen und Städte dann von Hand wählen.</li>
 </ul>
-<h4>2. Benutzerpräferenzen</h4>
+<h4>2. Auf Ihrem Gerät gespeicherte Daten</h4>
 <ul>
-<li>Temperatureinheit-Präferenz (Celsius/Fahrenheit)</li>
-<li>App-Theme-Präferenz (Dunkel/Hell/System)</li>
-<li>Sprachpräferenz</li>
-<li>Favorisierte Standorte (lokal und verschlüsselt gespeichert)</li>
+<li>Temperatureinheit, Design, Sprache, Benachrichtigungs- und Widget-Einstellungen</li>
+<li>Favorisierte Orte (unter Android verschlüsselt gespeichert)</li>
+<li>Diese Daten bleiben auf Ihrem Gerät und werden nicht an uns gesendet, außer wie unten unter Feedback beschrieben.</li>
 </ul>
-<h4>3. Geräteinformationen</h4>
+<h4>3. Nutzung und Diagnose</h4>
 <ul>
-<li>Gerätemodell und Betriebssystemversion (für App-Kompatibilität)</li>
-<li>App-Version und Absturzberichte (zur Verbesserung der Stabilität)</li>
+<li><strong>Analysen (Firebase Analytics):</strong> App-Ereignisse wie App-Starts, genutzte Bildschirme und Funktionen, Aufrufe der Premium-Seite, Werbeergebnisse, Berechtigungsentscheidungen sowie Sprache, Plattform und Gerätetyp. Sie sind mit einer zufälligen App-Instanz-ID verknüpft, nicht mit Ihrem Namen.</li>
+<li><strong>Absturzberichte (Firebase Crashlytics):</strong> Absturzprotokolle und technische Details (Gerätemodell, Betriebssystem- und App-Version), um Fehler zu beheben.</li>
+<li><strong>Fernkonfiguration (Firebase Remote Config):</strong> Die App lädt Einstellungen herunter (zum Beispiel welche Funktionen oder Hinweise angezeigt werden) und nutzt dafür eine Firebase-Installations-ID.</li>
+</ul>
+<h4>4. Werbung</h4>
+<ul>
+<li>Nutzer der kostenlosen Version sehen Werbung von Google AdMob. AdMob kann die Werbe-ID Ihres Geräts, Ihre IP-Adresse und Ihre Interaktionen mit Anzeigen erheben, um Anzeigen auszuliefern und zu messen.</li>
+<li>Auf iPhone und iPad fragen wir zuerst nach der Erlaubnis zum Tracking; lehnen Sie ab, werden Anzeigen nicht auf Basis von Tracking personalisiert. Unter Android können Sie Ihre Werbe-ID in den Geräteeinstellungen zurücksetzen oder löschen.</li>
+<li>Premium entfernt die Werbung.</li>
+</ul>
+<h4>5. Käufe</h4>
+<ul>
+<li>Abonnements werden von RevenueCat verwaltet, mit einer zufälligen App-Nutzer-ID und Ihrem Kaufverlauf. Zahlungen wickeln Apple oder Google ab; Ihre Kartendaten sehen wir nie.</li>
+</ul>
+<h4>6. Feedback und Fehlerberichte</h4>
+<ul>
+<li>Wenn Sie aus der App Feedback senden, erhalten wir Ihre Nachricht und, damit wir Ihnen helfen können: App-Version, Plattform, Gerätemodell, eine Gerätekennung (Android-ID oder iOS-Kennung für Anbieter), Sprache, Zeitzone, Ihre App-Einstellungen, Ihre RevenueCat-Nutzer-ID und Ihren Premium-Status sowie bei Fehlerberichten den in der App angezeigten Ort.</li>
+<li>Dies wird über eine verschlüsselte Verbindung an unseren Feedback-Server (feedback.aralbenli.com) gesendet und an unser Support-Postfach zugestellt. Wir nutzen es nur, um Ihnen zu antworten und Probleme zu beheben.</li>
 </ul>
 <h3>Wie wir Ihre Informationen verwenden</h3>
 <ul>
-<li><strong>Wetterdienste</strong>: Ihr Standort wird ausschließlich zur Bereitstellung von Wettervorhersagen verwendet</li>
-<li><strong>App-Funktionalität</strong>: Präferenzen werden gespeichert, um Ihre Erfahrung zu personalisieren</li>
-<li><strong>Analysen</strong>: Anonyme Nutzungsdaten helfen uns, die App zu verbessern</li>
-<li><strong>Sicherheit</strong>: Wir führen Sicherheitsprüfungen durch, um vor Manipulation zu schützen und die App-Integrität zu gewährleisten</li>
+<li><strong>Wetter:</strong> Standort und gesuchte Städte, um Vorhersagen anzuzeigen und Widgets zu aktualisieren</li>
+<li><strong>App-Funktionen:</strong> Einstellungen, Fernkonfiguration und Käufe</li>
+<li><strong>Analysen und Stabilität:</strong> Nutzungsereignisse und Absturzberichte, um die App zu verbessern</li>
+<li><strong>Werbung:</strong> Anzeigen für Nutzer der kostenlosen Version</li>
+<li><strong>Support:</strong> Feedback-Nachrichten, um Ihnen zu antworten</li>
+<li><strong>Sicherheit:</strong> Integritätsprüfungen zum Schutz vor Manipulation</li>
 </ul>
-<h3>Drittanbieterdienste</h3>
-<p>Wir verwenden folgende Drittanbieterdienste:</p>
-<h4>1. Wetterdatenanbieter</h4>
+<h3>Dienste von Drittanbietern</h3>
+<p>Diese Anbieter verarbeiten Daten in unserem Auftrag nach ihren eigenen Datenschutzrichtlinien:</p>
+<h4>1. Anbieter von Wetterdaten</h4>
 <ul>
-<li>Wir verwenden Wetter-APIs zum Abrufen von Vorhersagedaten</li>
-<li>Der Wetteranbieter kann Standortdaten gemäß seiner Datenschutzrichtlinie sammeln</li>
+<li>Wir nutzen Wetter-APIs, um Vorhersagedaten abzurufen. Sie erhalten Ihre Koordinaten oder die gesuchte Stadt und Ihre IP-Adresse.</li>
 </ul>
 <h4>2. RevenueCat (Abonnementverwaltung)</h4>
 <ul>
-<li>Wird für Premium-Abonnementfunktionen verwendet</li>
-<li>Verarbeitet Zahlungsinformationen (wir speichern keine Zahlungsdetails)</li>
 <li>Datenschutzrichtlinie: <a href="https://www.revenuecat.com/privacy" rel="noopener">https://www.revenuecat.com/privacy</a></li>
 </ul>
 <h4>3. Google AdMob (Werbung)</h4>
 <ul>
-<li>Zeigt Werbung für Nicht-Premium-Benutzer</li>
-<li>Kann Gerätekennungen und Nutzungsdaten sammeln</li>
 <li>Datenschutzrichtlinie: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li>
+<li>Wie Google Daten nutzt: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
 </ul>
-<h4>4. Google Firebase</h4>
+<h4>4. Google Firebase (Analytics, Crashlytics, Remote Config)</h4>
 <ul>
-<li>Wird für Absturzanalysen und App-Leistungsüberwachung verwendet</li>
 <li>Datenschutzrichtlinie: <a href="https://firebase.google.com/support/privacy" rel="noopener">https://firebase.google.com/support/privacy</a></li>
 </ul>
-<h3>Datenspeicherung und Sicherheit</h3>
+<h3>Datenspeicherung, Aufbewahrung und Sicherheit</h3>
 <ul>
-<li><strong>Lokale Speicherung</strong>: Präferenzen und Favoritenstandorte werden lokal auf Ihrem Gerät mit verschlüsselter Speicherung gespeichert</li>
-<li><strong>Keine Sammlung persönlicher Daten</strong>: Wir sammeln keine persönlich identifizierbaren Informationen (PII)</li>
-<li><strong>Sicherheitsmaßnahmen</strong>: Wir implementieren Sicherheitsprüfungen, um unbefugten Zugriff und Manipulation zu verhindern</li>
+<li>Alle Daten werden über verschlüsselte Verbindungen (HTTPS) gesendet.</li>
+<li>Wir speichern Ihren Standort nicht. Analyse- und Absturzdaten bewahrt Firebase gemäß seinen Aufbewahrungseinstellungen für begrenzte Zeit auf. Feedback-E-Mails werden nur so lange aufbewahrt, wie es für Ihre Anfrage nötig ist.</li>
+<li>Einstellungen und Favoriten bleiben auf Ihrem Gerät und werden beim Deinstallieren der App gelöscht.</li>
 </ul>
 <h3>Ihre Rechte</h3>
 <ul>
-<li><strong>Zugriff</strong>: Sie können alle in der App gespeicherten Daten über die Einstellungen einsehen</li>
-<li><strong>Löschung</strong>: Sie können alle App-Daten über die Geräteeinstellungen löschen oder durch Deinstallation der App</li>
-<li><strong>Widerspruch</strong>: Sie können Standortdienste deaktivieren oder auf Premium upgraden, um Werbung zu entfernen</li>
+<li><strong>Löschung:</strong> Schreiben Sie an <a href="mailto:support@aralbenli.com">support@aralbenli.com</a>, um die Löschung Ihrer Feedback-Nachrichten und der mit Ihren Kennungen verknüpften Daten bei unseren Anbietern zu verlangen. Geben Sie, wenn möglich, Ihre RevenueCat- oder Geräte-ID aus einem Feedback an.</li>
+<li><strong>Auskunft und Berichtigung:</strong> Sie können erfragen, welche Daten wir über Sie haben.</li>
+<li><strong>Widerspruch:</strong> Deaktivieren Sie den Standortzugriff, setzen Sie Ihre Werbe-ID zurück, lehnen Sie Tracking unter iOS ab oder wechseln Sie zu Premium, um Werbung zu entfernen.</li>
+<li>Wenn Sie im EWR, im Vereinigten Königreich oder in einer anderen Region mit Datenschutzgesetzen leben, haben Sie zusätzlich die Rechte nach diesen Gesetzen (z. B. DSGVO), einschließlich des Rechts auf Beschwerde bei Ihrer Datenschutzbehörde.</li>
 </ul>
-<h3>Privatsphäre von Kindern</h3>
-<p>Pixel Weather sammelt wissentlich keine Daten von Kindern unter 13 Jahren. Wenn Sie ein Elternteil sind und glauben, dass Ihr Kind uns persönliche Informationen zur Verfügung gestellt hat, kontaktieren Sie uns bitte.</p>
+<h3>Datenschutz von Kindern</h3>
+<p>Pixel Weather richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine Daten von ihnen. Wenn Sie als Elternteil glauben, dass Ihr Kind uns personenbezogene Daten übermittelt hat, kontaktieren Sie uns bitte; wir löschen sie dann.</p>
 <h3>Änderungen dieser Richtlinie</h3>
-<p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden in der App und auf dieser Seite veröffentlicht.</p>
-<h3>Kontaktieren Sie uns</h3>
+<p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden mit neuem Datum auf dieser Seite veröffentlicht.</p>
+<h3>Kontakt</h3>
 <p>Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte:</p>
 <ul>
 <li>E-Mail: <a href="mailto:support@aralbenli.com">support@aralbenli.com</a></li>
@@ -258,77 +299,90 @@
 </section>
 <section class="card policy" data-lang="fr" lang="fr" hidden>
 <h2>Français</h2>
-<p class="updated">Dernière mise à jour : 7 décembre 2024</p>
+<p class="updated">Dernière mise à jour : 7 novembre 2026</p>
 <h3>Introduction</h3>
-<p>Pixel Weather ("nous", "notre" ou "nos") respecte votre vie privée et s'engage à protéger vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application mobile.</p>
+<p>Pixel Weather (« nous ») respecte votre vie privée. Cette politique explique quelles données l'application Pixel Weather pour Android et iOS (y compris ses widgets et ses applications pour montre) collecte, pourquoi, qui les traite et comment vous pouvez les contrôler. Nous ne demandons ni votre nom, ni votre adresse e-mail, ni votre numéro de téléphone, et nous ne vendons pas vos données.</p>
 <h3>Informations que nous collectons</h3>
 <h4>1. Données de localisation</h4>
 <ul>
-<li>Nous collectons la localisation de votre appareil pour fournir des informations météorologiques précises</li>
-<li>Les données de localisation sont utilisées uniquement pour récupérer les prévisions météo et ne sont pas stockées de façon permanente</li>
-<li>Vous pouvez accorder ou révoquer les autorisations de localisation à tout moment via les paramètres de votre appareil</li>
+<li>Si vous l'autorisez, l'application lit la position de votre appareil (précise ou approximative, selon votre choix) et envoie les coordonnées à nos API météo pour obtenir les prévisions de l'endroit où vous êtes. Les noms de villes que vous recherchez sont envoyés de la même façon.</li>
+<li><strong>Localisation en arrière-plan (widgets) :</strong> si vous placez un widget réglé sur votre position actuelle et choisissez « Toujours autoriser » (Android) ou autorisez la localisation pour les widgets (iOS), l'application vérifie votre position en arrière-plan environ toutes les 15 minutes pour que le widget vous suive. Elle sert uniquement à obtenir la météo, jamais à la publicité ni aux statistiques.</li>
+<li>Nous ne conservons pas d'historique de vos positions. Vous pouvez modifier ou retirer l'accès à la localisation à tout moment dans les réglages de l'appareil et choisir ensuite les villes à la main.</li>
 </ul>
-<h4>2. Préférences utilisateur</h4>
+<h4>2. Données stockées sur votre appareil</h4>
 <ul>
-<li>Préférence d'unité de température (Celsius/Fahrenheit)</li>
-<li>Préférence de thème de l'application (Sombre/Clair/Système)</li>
-<li>Préférence de langue</li>
-<li>Emplacements favoris (stockés localement et cryptés)</li>
+<li>Unité de température, thème, langue, réglages des notifications et des widgets</li>
+<li>Lieux favoris (stockés de façon chiffrée sur Android)</li>
+<li>Ces données restent sur votre appareil et ne nous sont pas envoyées, sauf comme décrit ci-dessous dans Commentaires.</li>
 </ul>
-<h4>3. Informations sur l'appareil</h4>
+<h4>3. Utilisation et diagnostic</h4>
 <ul>
-<li>Modèle d'appareil et version du système d'exploitation (pour la compatibilité de l'application)</li>
-<li>Version de l'application et rapports de plantage (pour améliorer la stabilité)</li>
+<li><strong>Statistiques (Firebase Analytics) :</strong> événements de l'application comme les ouvertures, les écrans et fonctions utilisés, l'affichage de la page Premium, les résultats publicitaires, les choix d'autorisation, ainsi que la langue, la plateforme et le type d'appareil. Ils sont liés à un identifiant d'instance aléatoire, pas à votre nom.</li>
+<li><strong>Rapports de plantage (Firebase Crashlytics) :</strong> journaux de plantage et détails techniques (modèle d'appareil, versions du système et de l'application) pour corriger les bugs.</li>
+<li><strong>Configuration à distance (Firebase Remote Config) :</strong> l'application télécharge des réglages (par exemple les fonctions ou annonces à afficher) à l'aide d'un identifiant d'installation Firebase.</li>
+</ul>
+<h4>4. Publicité</h4>
+<ul>
+<li>Les utilisateurs de la version gratuite voient des publicités Google AdMob. AdMob peut collecter l'identifiant publicitaire de votre appareil, votre adresse IP et vos interactions avec les annonces pour les diffuser et les mesurer.</li>
+<li>Sur iPhone et iPad, nous demandons d'abord l'autorisation de suivi ; si vous refusez, les annonces ne sont pas personnalisées à partir du suivi. Sur Android, vous pouvez réinitialiser ou supprimer votre identifiant publicitaire dans les réglages de l'appareil.</li>
+<li>Premium supprime les publicités.</li>
+</ul>
+<h4>5. Achats</h4>
+<ul>
+<li>Les abonnements sont gérés par RevenueCat, avec un identifiant utilisateur aléatoire et votre historique d'achats. Les paiements sont traités par Apple ou Google ; nous ne voyons jamais vos données de carte.</li>
+</ul>
+<h4>6. Commentaires et rapports de bug</h4>
+<ul>
+<li>Si vous envoyez un commentaire depuis l'application, nous recevons votre message et, pour pouvoir vous aider : la version de l'application, la plateforme, le modèle d'appareil, un identifiant d'appareil (Android ID ou identifiant iOS pour le fournisseur), la langue, le fuseau horaire, vos réglages de l'application, votre identifiant RevenueCat et votre statut Premium, et pour les rapports de bug le lieu affiché dans l'application.</li>
+<li>Ces informations sont envoyées par une connexion chiffrée à notre serveur de commentaires (feedback.aralbenli.com) puis transmises à notre boîte de support. Nous les utilisons uniquement pour vous répondre et corriger les problèmes.</li>
 </ul>
 <h3>Comment nous utilisons vos informations</h3>
 <ul>
-<li><strong>Services météorologiques</strong> : Votre localisation est utilisée uniquement pour fournir des prévisions météo</li>
-<li><strong>Fonctionnalité de l'application</strong> : Les préférences sont stockées pour personnaliser votre expérience</li>
-<li><strong>Analyses</strong> : Les données d'utilisation anonymes nous aident à améliorer l'application</li>
-<li><strong>Sécurité</strong> : Nous effectuons des contrôles de sécurité pour protéger contre les manipulations et garantir l'intégrité de l'application</li>
+<li><strong>Météo :</strong> position et villes recherchées, pour afficher les prévisions et actualiser les widgets</li>
+<li><strong>Fonctionnement de l'application :</strong> réglages, configuration à distance et achats</li>
+<li><strong>Statistiques et stabilité :</strong> événements d'utilisation et rapports de plantage, pour améliorer l'application</li>
+<li><strong>Publicité :</strong> annonces pour les utilisateurs de la version gratuite</li>
+<li><strong>Support :</strong> messages de commentaires, pour vous répondre</li>
+<li><strong>Sécurité :</strong> contrôles d'intégrité contre la falsification</li>
 </ul>
 <h3>Services tiers</h3>
-<p>Nous utilisons les services tiers suivants :</p>
-<h4>1. Fournisseur de données météorologiques</h4>
+<p>Ces prestataires traitent des données pour notre compte, selon leurs propres politiques de confidentialité :</p>
+<h4>1. Fournisseurs de données météo</h4>
 <ul>
-<li>Nous utilisons des API météo pour récupérer les données de prévision</li>
-<li>Le fournisseur météo peut collecter des données de localisation selon sa politique de confidentialité</li>
+<li>Nous utilisons des API météo pour obtenir les prévisions. Elles reçoivent vos coordonnées ou la ville recherchée et votre adresse IP.</li>
 </ul>
-<h4>2. RevenueCat (Gestion des abonnements)</h4>
+<h4>2. RevenueCat (gestion des abonnements)</h4>
 <ul>
-<li>Utilisé pour les fonctionnalités d'abonnement premium</li>
-<li>Traite les informations de paiement (nous ne stockons pas les détails de paiement)</li>
 <li>Politique de confidentialité : <a href="https://www.revenuecat.com/privacy" rel="noopener">https://www.revenuecat.com/privacy</a></li>
 </ul>
-<h4>3. Google AdMob (Publicités)</h4>
+<h4>3. Google AdMob (publicités)</h4>
 <ul>
-<li>Affiche des publicités aux utilisateurs non premium</li>
-<li>Peut collecter des identifiants d'appareil et des données d'utilisation</li>
 <li>Politique de confidentialité : <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li>
+<li>Utilisation des données par Google : <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
 </ul>
-<h4>4. Google Firebase</h4>
+<h4>4. Google Firebase (Analytics, Crashlytics, Remote Config)</h4>
 <ul>
-<li>Utilisé pour l'analyse des plantages et la surveillance des performances de l'application</li>
 <li>Politique de confidentialité : <a href="https://firebase.google.com/support/privacy" rel="noopener">https://firebase.google.com/support/privacy</a></li>
 </ul>
-<h3>Stockage et sécurité des données</h3>
+<h3>Stockage, conservation et sécurité des données</h3>
 <ul>
-<li><strong>Stockage local</strong> : Les préférences et emplacements favoris sont stockés localement sur votre appareil à l'aide d'un stockage crypté</li>
-<li><strong>Pas de collecte de données personnelles</strong> : Nous ne collectons pas d'informations personnellement identifiables (PII)</li>
-<li><strong>Mesures de sécurité</strong> : Nous mettons en œuvre des contrôles de sécurité pour empêcher l'accès non autorisé et la manipulation</li>
+<li>Toutes les données sont envoyées via des connexions chiffrées (HTTPS).</li>
+<li>Nous ne conservons pas votre position. Firebase conserve les données statistiques et de plantage pendant une durée limitée selon ses paramètres de conservation. Les e-mails de commentaires ne sont gardés que le temps nécessaire pour traiter votre demande.</li>
+<li>Les réglages et favoris restent sur votre appareil et sont supprimés lorsque vous désinstallez l'application.</li>
 </ul>
 <h3>Vos droits</h3>
 <ul>
-<li><strong>Accès</strong> : Vous pouvez consulter toutes les données stockées dans l'application via les Paramètres</li>
-<li><strong>Suppression</strong> : Vous pouvez effacer toutes les données de l'application via les paramètres de l'appareil ou en désinstallant l'application</li>
-<li><strong>Opt-Out</strong> : Vous pouvez désactiver les services de localisation ou passer à Premium pour supprimer les publicités</li>
+<li><strong>Suppression :</strong> écrivez à <a href="mailto:support@aralbenli.com">support@aralbenli.com</a> pour demander la suppression de vos messages et des données liées à vos identifiants chez nos prestataires. Si possible, indiquez votre identifiant RevenueCat ou d'appareil figurant dans un commentaire.</li>
+<li><strong>Accès et rectification :</strong> vous pouvez demander quelles données nous détenons sur vous.</li>
+<li><strong>Opposition :</strong> désactivez l'accès à la localisation, réinitialisez votre identifiant publicitaire, refusez le suivi sur iOS ou passez à Premium pour supprimer les publicités.</li>
+<li>Si vous vivez dans l'EEE, au Royaume-Uni ou dans une autre région dotée de lois sur la protection des données, vous disposez aussi des droits que ces lois vous donnent (comme le RGPD), y compris celui de porter plainte auprès de votre autorité de protection des données.</li>
 </ul>
 <h3>Confidentialité des enfants</h3>
-<p>Pixel Weather ne collecte pas sciemment de données auprès d'enfants de moins de 13 ans. Si vous êtes parent et pensez que votre enfant nous a fourni des informations personnelles, veuillez nous contacter.</p>
+<p>Pixel Weather ne s'adresse pas aux enfants de moins de 13 ans et ne collecte pas sciemment de données les concernant. Si vous êtes parent et pensez que votre enfant nous a fourni des informations personnelles, contactez-nous et nous les supprimerons.</p>
 <h3>Modifications de cette politique</h3>
-<p>Nous pouvons mettre à jour cette politique de confidentialité de temps en temps. Les modifications seront publiées dans l'application et sur cette page.</p>
+<p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Les modifications seront publiées sur cette page avec une nouvelle date.</p>
 <h3>Nous contacter</h3>
-<p>Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter :</p>
+<p>Si vous avez des questions sur cette politique de confidentialité, contactez-nous :</p>
 <ul>
 <li>E-mail : <a href="mailto:support@aralbenli.com">support@aralbenli.com</a></li>
 <li>GitHub : <a href="https://github.com/AralBenli" rel="noopener">https://github.com/AralBenli</a></li>
@@ -336,155 +390,181 @@
 </section>
 <section class="card policy" data-lang="it" lang="it" hidden>
 <h2>Italiano</h2>
-<p class="updated">Ultimo aggiornamento: 7 dicembre 2024</p>
+<p class="updated">Ultimo aggiornamento: 7 novembre 2026</p>
 <h3>Introduzione</h3>
-<p>Pixel Weather ("noi", "nostro" o "ci") rispetta la tua privacy e si impegna a proteggere i tuoi dati personali. Questa informativa sulla privacy spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni quando utilizzi la nostra applicazione mobile.</p>
+<p>Pixel Weather ("noi") rispetta la tua privacy. Questa informativa spiega quali dati raccoglie l'app Pixel Weather per Android e iOS (inclusi i widget e le app per smartwatch), perché, chi li tratta e come puoi controllarli. Non chiediamo il tuo nome, indirizzo email o numero di telefono e non vendiamo i tuoi dati.</p>
 <h3>Informazioni che raccogliamo</h3>
 <h4>1. Dati sulla posizione</h4>
 <ul>
-<li>Raccogliamo la posizione del tuo dispositivo per fornire informazioni meteorologiche accurate</li>
-<li>I dati sulla posizione vengono utilizzati solo per recuperare le previsioni meteorologiche e non vengono memorizzati in modo permanente</li>
-<li>Puoi concedere o revocare le autorizzazioni di localizzazione in qualsiasi momento tramite le impostazioni del dispositivo</li>
+<li>Se lo consenti, l'app legge la posizione del dispositivo (precisa o approssimativa, a tua scelta) e invia le coordinate alle nostre API meteo per ottenere le previsioni del luogo in cui ti trovi. Anche i nomi delle città che cerchi vengono inviati allo stesso modo.</li>
+<li><strong>Posizione in background (widget):</strong> se aggiungi un widget impostato sulla posizione attuale e scegli "Consenti sempre" (Android) o consenti la posizione per i widget (iOS), l'app controlla la tua posizione in background circa ogni 15 minuti affinché il widget ti segua. Serve solo a ottenere il meteo e non viene mai usata per pubblicità o statistiche.</li>
+<li>Non conserviamo la cronologia delle posizioni. Puoi modificare o revocare l'accesso alla posizione in qualsiasi momento dalle impostazioni del dispositivo e poi scegliere le città a mano.</li>
 </ul>
-<h4>2. Preferenze utente</h4>
+<h4>2. Dati salvati sul dispositivo</h4>
 <ul>
-<li>Preferenza unità di temperatura (Celsius/Fahrenheit)</li>
-<li>Preferenza tema app (Scuro/Chiaro/Sistema)</li>
-<li>Preferenza lingua</li>
-<li>Posizioni preferite (memorizzate localmente e crittografate)</li>
+<li>Unità di temperatura, tema, lingua, impostazioni di notifiche e widget</li>
+<li>Località preferite (su Android in archiviazione crittografata)</li>
+<li>Questi dati restano sul dispositivo e non ci vengono inviati, salvo quanto descritto più sotto in Feedback.</li>
 </ul>
-<h4>3. Informazioni sul dispositivo</h4>
+<h4>3. Utilizzo e diagnostica</h4>
 <ul>
-<li>Modello del dispositivo e versione del sistema operativo (per compatibilità dell'app)</li>
-<li>Versione dell'app e rapporti sui crash (per migliorare la stabilità)</li>
+<li><strong>Statistiche (Firebase Analytics):</strong> eventi dell'app come aperture, schermate e funzioni usate, visualizzazioni della pagina Premium, risultati degli annunci, scelte sui permessi, oltre a lingua, piattaforma e tipo di dispositivo. Sono collegati a un ID istanza casuale, non al tuo nome.</li>
+<li><strong>Rapporti sugli arresti anomali (Firebase Crashlytics):</strong> log degli arresti e dettagli tecnici (modello del dispositivo, versioni del sistema e dell'app) per correggere i bug.</li>
+<li><strong>Configurazione remota (Firebase Remote Config):</strong> l'app scarica impostazioni (ad esempio quali funzioni o avvisi mostrare) usando un ID di installazione Firebase.</li>
+</ul>
+<h4>4. Pubblicità</h4>
+<ul>
+<li>Gli utenti della versione gratuita vedono annunci di Google AdMob. AdMob può raccogliere l'ID pubblicità del dispositivo, l'indirizzo IP e le interazioni con gli annunci per mostrarli e misurarli.</li>
+<li>Su iPhone e iPad chiediamo prima il permesso di tracciamento; se rifiuti, gli annunci non vengono personalizzati in base al tracciamento. Su Android puoi reimpostare o eliminare l'ID pubblicità nelle impostazioni del dispositivo.</li>
+<li>Premium rimuove gli annunci.</li>
+</ul>
+<h4>5. Acquisti</h4>
+<ul>
+<li>Gli abbonamenti sono gestiti da RevenueCat, con un ID utente casuale e la cronologia degli acquisti. I pagamenti sono elaborati da Apple o Google; non vediamo mai i dati della tua carta.</li>
+</ul>
+<h4>6. Feedback e segnalazioni di bug</h4>
+<ul>
+<li>Se invii un feedback dall'app, riceviamo il tuo messaggio e, per poterti aiutare: versione dell'app, piattaforma, modello del dispositivo, un identificativo del dispositivo (Android ID o identificativo iOS per il fornitore), lingua, fuso orario, impostazioni dell'app, ID utente RevenueCat e stato Premium e, nelle segnalazioni di bug, la località mostrata nell'app.</li>
+<li>Queste informazioni vengono inviate tramite connessione crittografata al nostro server di feedback (feedback.aralbenli.com) e recapitate alla nostra casella di supporto. Le usiamo solo per risponderti e risolvere i problemi.</li>
 </ul>
 <h3>Come utilizziamo le tue informazioni</h3>
 <ul>
-<li><strong>Servizi meteorologici</strong>: La tua posizione viene utilizzata esclusivamente per fornire previsioni meteorologiche</li>
-<li><strong>Funzionalità dell'app</strong>: Le preferenze vengono memorizzate per personalizzare la tua esperienza</li>
-<li><strong>Analisi</strong>: I dati di utilizzo anonimi ci aiutano a migliorare l'app</li>
-<li><strong>Sicurezza</strong>: Eseguiamo controlli di sicurezza per proteggere da manomissioni e garantire l'integrità dell'app</li>
+<li><strong>Meteo:</strong> posizione e città cercate, per mostrare le previsioni e aggiornare i widget</li>
+<li><strong>Funzionamento dell'app:</strong> impostazioni, configurazione remota e acquisti</li>
+<li><strong>Statistiche e stabilità:</strong> eventi di utilizzo e rapporti sugli arresti, per migliorare l'app</li>
+<li><strong>Pubblicità:</strong> annunci per gli utenti della versione gratuita</li>
+<li><strong>Supporto:</strong> messaggi di feedback, per risponderti</li>
+<li><strong>Sicurezza:</strong> controlli di integrità contro le manomissioni</li>
 </ul>
 <h3>Servizi di terze parti</h3>
-<p>Utilizziamo i seguenti servizi di terze parti:</p>
-<h4>1. Fornitore di dati meteorologici</h4>
+<p>Questi fornitori trattano i dati per nostro conto, secondo le proprie informative sulla privacy:</p>
+<h4>1. Fornitori di dati meteo</h4>
 <ul>
-<li>Utilizziamo API meteorologiche per recuperare i dati delle previsioni</li>
-<li>Il fornitore meteorologico può raccogliere dati sulla posizione secondo la propria informativa sulla privacy</li>
+<li>Usiamo API meteo per ottenere le previsioni. Ricevono le tue coordinate o la città cercata e il tuo indirizzo IP.</li>
 </ul>
-<h4>2. RevenueCat (Gestione abbonamenti)</h4>
+<h4>2. RevenueCat (gestione abbonamenti)</h4>
 <ul>
-<li>Utilizzato per funzionalità di abbonamento premium</li>
-<li>Elabora informazioni di pagamento (non memorizziamo i dettagli di pagamento)</li>
 <li>Informativa sulla privacy: <a href="https://www.revenuecat.com/privacy" rel="noopener">https://www.revenuecat.com/privacy</a></li>
 </ul>
-<h4>3. Google AdMob (Pubblicità)</h4>
+<h4>3. Google AdMob (pubblicità)</h4>
 <ul>
-<li>Mostra annunci agli utenti non premium</li>
-<li>Può raccogliere identificatori del dispositivo e dati di utilizzo</li>
 <li>Informativa sulla privacy: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li>
+<li>Come Google usa i dati: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
 </ul>
-<h4>4. Google Firebase</h4>
+<h4>4. Google Firebase (Analytics, Crashlytics, Remote Config)</h4>
 <ul>
-<li>Utilizzato per l'analisi dei crash e il monitoraggio delle prestazioni dell'app</li>
 <li>Informativa sulla privacy: <a href="https://firebase.google.com/support/privacy" rel="noopener">https://firebase.google.com/support/privacy</a></li>
 </ul>
-<h3>Archiviazione e sicurezza dei dati</h3>
+<h3>Archiviazione, conservazione e sicurezza dei dati</h3>
 <ul>
-<li><strong>Archiviazione locale</strong>: Le preferenze e le posizioni preferite vengono memorizzate localmente sul tuo dispositivo utilizzando l'archiviazione crittografata</li>
-<li><strong>Nessuna raccolta di dati personali</strong>: Non raccogliamo informazioni personalmente identificabili (PII)</li>
-<li><strong>Misure di sicurezza</strong>: Implementiamo controlli di sicurezza per prevenire accessi non autorizzati e manomissioni</li>
+<li>Tutti i dati vengono inviati tramite connessioni crittografate (HTTPS).</li>
+<li>Non conserviamo la tua posizione. Firebase conserva i dati statistici e sugli arresti per un periodo limitato secondo le sue impostazioni di conservazione. Le email di feedback sono conservate solo per il tempo necessario a gestire la tua richiesta.</li>
+<li>Impostazioni e preferiti restano sul dispositivo e vengono eliminati quando disinstalli l'app.</li>
 </ul>
 <h3>I tuoi diritti</h3>
 <ul>
-<li><strong>Accesso</strong>: Puoi visualizzare tutti i dati memorizzati nell'app tramite Impostazioni</li>
-<li><strong>Eliminazione</strong>: Puoi cancellare tutti i dati dell'app tramite le impostazioni del dispositivo o disinstallando l'app</li>
-<li><strong>Opt-Out</strong>: Puoi disabilitare i servizi di localizzazione o passare a Premium per rimuovere gli annunci</li>
+<li><strong>Cancellazione:</strong> scrivi a <a href="mailto:support@aralbenli.com">support@aralbenli.com</a> per chiedere la cancellazione dei tuoi messaggi di feedback e dei dati collegati ai tuoi identificativi presso i nostri fornitori. Se puoi, indica l'ID RevenueCat o del dispositivo presente in un feedback.</li>
+<li><strong>Accesso e rettifica:</strong> puoi chiedere quali dati abbiamo su di te.</li>
+<li><strong>Opposizione:</strong> disattiva l'accesso alla posizione, reimposta l'ID pubblicità, rifiuta il tracciamento su iOS o passa a Premium per rimuovere gli annunci.</li>
+<li>Se vivi nel SEE, nel Regno Unito o in un'altra regione con leggi sulla protezione dei dati, hai anche i diritti previsti da tali leggi (come il GDPR), incluso il diritto di presentare reclamo all'autorità di controllo.</li>
 </ul>
-<h3>Privacy dei bambini</h3>
-<p>Pixel Weather non raccoglie consapevolmente dati da bambini di età inferiore ai 13 anni. Se sei un genitore e ritieni che tuo figlio ci abbia fornito informazioni personali, ti preghiamo di contattarci.</p>
-<h3>Modifiche a questa politica</h3>
-<p>Potremmo aggiornare questa informativa sulla privacy di volta in volta. Le modifiche saranno pubblicate nell'app e in questa pagina.</p>
+<h3>Privacy dei minori</h3>
+<p>Pixel Weather non è rivolta ai minori di 13 anni e non raccoglie consapevolmente dati che li riguardano. Se sei un genitore e ritieni che tuo figlio ci abbia fornito informazioni personali, contattaci e le cancelleremo.</p>
+<h3>Modifiche a questa informativa</h3>
+<p>Possiamo aggiornare questa informativa sulla privacy di tanto in tanto. Le modifiche saranno pubblicate su questa pagina con una nuova data.</p>
 <h3>Contattaci</h3>
 <p>Se hai domande su questa informativa sulla privacy, contattaci:</p>
 <ul>
-<li>E-mail: <a href="mailto:support@aralbenli.com">support@aralbenli.com</a></li>
+<li>Email: <a href="mailto:support@aralbenli.com">support@aralbenli.com</a></li>
 <li>GitHub: <a href="https://github.com/AralBenli" rel="noopener">https://github.com/AralBenli</a></li>
 </ul>
 </section>
 <section class="card policy" data-lang="es" lang="es" hidden>
 <h2>Español</h2>
-<p class="updated">Última actualización: 7 de diciembre de 2024</p>
+<p class="updated">Última actualización: 7 de noviembre de 2026</p>
 <h3>Introducción</h3>
-<p>Pixel Weather ("nosotros", "nuestro" o "nos") respeta su privacidad y se compromete a proteger sus datos personales. Esta política de privacidad explica cómo recopilamos, usamos y protegemos su información cuando utiliza nuestra aplicación móvil.</p>
+<p>Pixel Weather ("nosotros") respeta tu privacidad. Esta política explica qué datos recopila la app Pixel Weather para Android e iOS (incluidos sus widgets y apps para reloj), por qué, quién los trata y cómo puedes controlarlos. No te pedimos tu nombre, correo electrónico ni número de teléfono, y no vendemos tus datos.</p>
 <h3>Información que recopilamos</h3>
 <h4>1. Datos de ubicación</h4>
 <ul>
-<li>Recopilamos la ubicación de su dispositivo para proporcionar información meteorológica precisa</li>
-<li>Los datos de ubicación se utilizan únicamente para obtener pronósticos meteorológicos y no se almacenan de forma permanente</li>
-<li>Puede otorgar o revocar permisos de ubicación en cualquier momento a través de la configuración de su dispositivo</li>
+<li>Si lo permites, la app lee la ubicación de tu dispositivo (precisa o aproximada, según elijas) y envía las coordenadas a nuestras API meteorológicas para obtener el pronóstico de donde estás. Los nombres de ciudades que buscas se envían de la misma forma.</li>
+<li><strong>Ubicación en segundo plano (widgets):</strong> si colocas un widget configurado con tu ubicación actual y eliges "Permitir todo el tiempo" (Android) o permites la ubicación para widgets (iOS), la app comprueba tu ubicación en segundo plano cada 15 minutos aproximadamente para que el widget te siga. Solo se usa para obtener el tiempo; nunca para publicidad ni estadísticas.</li>
+<li>No guardamos tu historial de ubicaciones. Puedes cambiar o retirar el acceso a la ubicación en cualquier momento en los ajustes del dispositivo y elegir las ciudades a mano.</li>
 </ul>
-<h4>2. Preferencias del usuario</h4>
+<h4>2. Datos guardados en tu dispositivo</h4>
 <ul>
-<li>Preferencia de unidad de temperatura (Celsius/Fahrenheit)</li>
-<li>Preferencia de tema de la aplicación (Oscuro/Claro/Sistema)</li>
-<li>Preferencia de idioma</li>
-<li>Ubicaciones favoritas (almacenadas localmente y encriptadas)</li>
+<li>Unidad de temperatura, tema, idioma, ajustes de notificaciones y widgets</li>
+<li>Ubicaciones favoritas (en Android, en almacenamiento cifrado)</li>
+<li>Estos datos permanecen en tu dispositivo y no se nos envían, salvo lo descrito más abajo en Comentarios.</li>
 </ul>
-<h4>3. Información del dispositivo</h4>
+<h4>3. Uso y diagnóstico</h4>
 <ul>
-<li>Modelo de dispositivo y versión del sistema operativo (para compatibilidad de la aplicación)</li>
-<li>Versión de la aplicación e informes de fallos (para mejorar la estabilidad)</li>
+<li><strong>Estadísticas (Firebase Analytics):</strong> eventos de la app como aperturas, pantallas y funciones usadas, vistas de la página Premium, resultados de anuncios, decisiones sobre permisos, además del idioma, la plataforma y el tipo de dispositivo. Están vinculados a un ID de instancia aleatorio, no a tu nombre.</li>
+<li><strong>Informes de fallos (Firebase Crashlytics):</strong> registros de fallos y detalles técnicos (modelo del dispositivo, versiones del sistema y de la app) para corregir errores.</li>
+<li><strong>Configuración remota (Firebase Remote Config):</strong> la app descarga ajustes (por ejemplo, qué funciones o avisos mostrar) usando un ID de instalación de Firebase.</li>
 </ul>
-<h3>Cómo utilizamos su información</h3>
+<h4>4. Publicidad</h4>
 <ul>
-<li><strong>Servicios meteorológicos</strong>: Su ubicación se utiliza únicamente para proporcionar pronósticos meteorológicos</li>
-<li><strong>Funcionalidad de la aplicación</strong>: Las preferencias se almacenan para personalizar su experiencia</li>
-<li><strong>Análisis</strong>: Los datos de uso anónimos nos ayudan a mejorar la aplicación</li>
-<li><strong>Seguridad</strong>: Realizamos verificaciones de seguridad para proteger contra manipulaciones y garantizar la integridad de la aplicación</li>
+<li>Los usuarios de la versión gratuita ven anuncios de Google AdMob. AdMob puede recopilar el ID de publicidad del dispositivo, tu dirección IP y tus interacciones con los anuncios para mostrarlos y medirlos.</li>
+<li>En iPhone y iPad primero pedimos permiso de rastreo; si lo rechazas, los anuncios no se personalizan según el rastreo. En Android puedes restablecer o eliminar tu ID de publicidad en los ajustes del dispositivo.</li>
+<li>Premium elimina los anuncios.</li>
+</ul>
+<h4>5. Compras</h4>
+<ul>
+<li>Las suscripciones las gestiona RevenueCat, con un ID de usuario aleatorio y tu historial de compras. Los pagos los procesan Apple o Google; nunca vemos los datos de tu tarjeta.</li>
+</ul>
+<h4>6. Comentarios e informes de errores</h4>
+<ul>
+<li>Si envías comentarios desde la app, recibimos tu mensaje y, para poder ayudarte: la versión de la app, la plataforma, el modelo del dispositivo, un identificador del dispositivo (Android ID o identificador de iOS para el proveedor), el idioma, la zona horaria, tus ajustes de la app, tu ID de usuario de RevenueCat y tu estado Premium y, en los informes de errores, la ubicación mostrada en la app.</li>
+<li>Se envía mediante una conexión cifrada a nuestro servidor de comentarios (feedback.aralbenli.com) y llega a nuestro buzón de soporte. Solo lo usamos para responderte y solucionar problemas.</li>
+</ul>
+<h3>Cómo usamos tu información</h3>
+<ul>
+<li><strong>Tiempo:</strong> ubicación y ciudades buscadas, para mostrar pronósticos y actualizar los widgets</li>
+<li><strong>Funcionamiento de la app:</strong> ajustes, configuración remota y compras</li>
+<li><strong>Estadísticas y estabilidad:</strong> eventos de uso e informes de fallos, para mejorar la app</li>
+<li><strong>Publicidad:</strong> anuncios para los usuarios de la versión gratuita</li>
+<li><strong>Soporte:</strong> mensajes de comentarios, para responderte</li>
+<li><strong>Seguridad:</strong> comprobaciones de integridad contra manipulaciones</li>
 </ul>
 <h3>Servicios de terceros</h3>
-<p>Utilizamos los siguientes servicios de terceros:</p>
-<h4>1. Proveedor de datos meteorológicos</h4>
+<p>Estos proveedores tratan datos en nuestro nombre, según sus propias políticas de privacidad:</p>
+<h4>1. Proveedores de datos meteorológicos</h4>
 <ul>
-<li>Utilizamos APIs meteorológicas para obtener datos de pronóstico</li>
-<li>El proveedor meteorológico puede recopilar datos de ubicación según su política de privacidad</li>
+<li>Usamos API meteorológicas para obtener los pronósticos. Reciben tus coordenadas o la ciudad buscada y tu dirección IP.</li>
 </ul>
-<h4>2. RevenueCat (Gestión de suscripciones)</h4>
+<h4>2. RevenueCat (gestión de suscripciones)</h4>
 <ul>
-<li>Se utiliza para funciones de suscripción premium</li>
-<li>Procesa información de pago (no almacenamos detalles de pago)</li>
 <li>Política de privacidad: <a href="https://www.revenuecat.com/privacy" rel="noopener">https://www.revenuecat.com/privacy</a></li>
 </ul>
-<h4>3. Google AdMob (Publicidad)</h4>
+<h4>3. Google AdMob (anuncios)</h4>
 <ul>
-<li>Muestra anuncios a usuarios no premium</li>
-<li>Puede recopilar identificadores de dispositivo y datos de uso</li>
 <li>Política de privacidad: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li>
+<li>Cómo usa Google los datos: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
 </ul>
-<h4>4. Google Firebase</h4>
+<h4>4. Google Firebase (Analytics, Crashlytics, Remote Config)</h4>
 <ul>
-<li>Se utiliza para análisis de fallos y monitoreo del rendimiento de la aplicación</li>
 <li>Política de privacidad: <a href="https://firebase.google.com/support/privacy" rel="noopener">https://firebase.google.com/support/privacy</a></li>
 </ul>
-<h3>Almacenamiento y seguridad de datos</h3>
+<h3>Almacenamiento, conservación y seguridad de los datos</h3>
 <ul>
-<li><strong>Almacenamiento local</strong>: Las preferencias y ubicaciones favoritas se almacenan localmente en su dispositivo utilizando almacenamiento encriptado</li>
-<li><strong>No recopilación de datos personales</strong>: No recopilamos información de identificación personal (PII)</li>
-<li><strong>Medidas de seguridad</strong>: Implementamos verificaciones de seguridad para prevenir accesos no autorizados y manipulaciones</li>
+<li>Todos los datos se envían mediante conexiones cifradas (HTTPS).</li>
+<li>No guardamos tu ubicación. Firebase conserva los datos de estadísticas y fallos durante un tiempo limitado según sus ajustes de conservación. Los correos de comentarios se guardan solo el tiempo necesario para atender tu solicitud.</li>
+<li>Los ajustes y favoritos permanecen en tu dispositivo y se eliminan al desinstalar la app.</li>
 </ul>
-<h3>Sus derechos</h3>
+<h3>Tus derechos</h3>
 <ul>
-<li><strong>Acceso</strong>: Puede ver todos los datos almacenados en la aplicación a través de Configuración</li>
-<li><strong>Eliminación</strong>: Puede borrar todos los datos de la aplicación a través de la configuración del dispositivo o desinstalando la aplicación</li>
-<li><strong>Exclusión</strong>: Puede deshabilitar los servicios de ubicación o actualizar a Premium para eliminar anuncios</li>
+<li><strong>Eliminación:</strong> escribe a <a href="mailto:support@aralbenli.com">support@aralbenli.com</a> para pedir que eliminemos tus mensajes de comentarios y los datos vinculados a tus identificadores en nuestros proveedores. Si puedes, incluye tu ID de RevenueCat o del dispositivo que aparece en un comentario.</li>
+<li><strong>Acceso y rectificación:</strong> puedes preguntar qué datos tenemos sobre ti.</li>
+<li><strong>Exclusión:</strong> desactiva el acceso a la ubicación, restablece tu ID de publicidad, rechaza el rastreo en iOS o pásate a Premium para eliminar los anuncios.</li>
+<li>Si vives en el EEE, el Reino Unido u otra región con leyes de protección de datos, también tienes los derechos que esas leyes te otorgan (como el RGPD), incluido el de reclamar ante tu autoridad de protección de datos.</li>
 </ul>
-<h3>Privacidad de los niños</h3>
-<p>Pixel Weather no recopila intencionalmente datos de niños menores de 13 años. Si es padre y cree que su hijo nos ha proporcionado información personal, contáctenos.</p>
+<h3>Privacidad de los menores</h3>
+<p>Pixel Weather no está dirigida a menores de 13 años y no recopila datos de ellos a sabiendas. Si eres padre o madre y crees que tu hijo nos ha proporcionado información personal, contáctanos y la eliminaremos.</p>
 <h3>Cambios en esta política</h3>
-<p>Podemos actualizar esta política de privacidad de vez en cuando. Los cambios se publicarán en la aplicación y en esta página.</p>
-<h3>Contáctenos</h3>
-<p>Si tiene preguntas sobre esta política de privacidad, contáctenos:</p>
+<p>Podemos actualizar esta política de privacidad de vez en cuando. Los cambios se publicarán en esta página con una nueva fecha.</p>
+<h3>Contacto</h3>
+<p>Si tienes preguntas sobre esta política de privacidad, contáctanos:</p>
 <ul>
 <li>Correo electrónico: <a href="mailto:support@aralbenli.com">support@aralbenli.com</a></li>
 <li>GitHub: <a href="https://github.com/AralBenli" rel="noopener">https://github.com/AralBenli</a></li>

@@ -15,8 +15,23 @@
   color-scheme: dark;
 }
 
+/* Light: the app's light theme (?theme=light), or the system setting when the app sends none */
+:root[data-theme="light"] {
+    --bg: #d8dce0;
+    --bg-2: #e4e0d8;
+    --card: #f4f2ee;
+    --card-edge: #4a4a5e;
+    --text: #2d2d3f;
+    --muted: #4a4a5e;
+    --heading: #1a1a2e;
+    --accent: #a36029;
+    --accent-dim: #a36029;
+    --link: #48627e;
+    --sun: #ab8644;
+    color-scheme: light;
+}
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
     --bg: #d8dce0;
     --bg-2: #e4e0d8;
     --card: #f4f2ee;
@@ -56,7 +71,8 @@ body {
   background-position: 20px 30px, 60px 80px;
   opacity: .25;
 }
-@media (prefers-color-scheme: light) { .sky { display: none; } }
+:root[data-theme="light"] .sky { display: none; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .sky { display: none; } }
 
 main, footer {
   position: relative;
@@ -127,7 +143,8 @@ h4 { margin: 16px 0 4px; font-size: 15px; color: var(--heading); }
   color: var(--bg);
   background: var(--accent-dim);
 }
-@media (prefers-color-scheme: light) { .updated { color: #fff; } }
+:root[data-theme="light"] .updated { color: #fff; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .updated { color: #fff; } }
 
 .lead { font-size: 17px; margin-top: 0; }
 .muted { color: var(--muted); font-size: 14px; }
